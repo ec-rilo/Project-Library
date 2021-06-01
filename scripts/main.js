@@ -1,17 +1,17 @@
 'use strict';
 
-function Book(title, author, numOfPages, readConfirm) {
+function Book(title, author, numOfPages, bookLang, publishDate, readConfirm) {
     this.title = title;
     this.author = author;
     this.numOfPages = numOfPages;
+    this.bookLang = bookLang;
+    this.publishDate = publishDate;
     this.readConfirm = readConfirm;
-    this.info = `${title} by ${author}, ${numOfPages} pages, ${readConfirm}`;
 }
 
-let theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'not read yet');
+let GoT = new Book('A Game Of Thrones', 'George R. R. Martin', '694', 'English', 'publishDate', 'not read yet');
 
-let bookArr = [theHobbit];
-console.log(bookArr);
+let bookArr = [GoT];
 function addBookToLibrary(bookArr, userBook) {
     bookArr.push(book);
 }
