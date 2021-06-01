@@ -39,13 +39,32 @@ body {
     color: var(--text-color);
     font-family: var(--text-font);
     font-size: 20px;
-    font-weight: bold;
-    height: 200px;
-    width: 330px;
+    height: 220px;
+    width: 360px;
     border-radius: 5px;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 20%), 
                 0px 6px 10px 0px rgba(0, 0, 0, 14%),
                 0px 1px 18px 0px rgba(0, 0, 0, 12%);
+}
+
+.card-text-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-left: 25px;
+}
+
+.card-book-title {
+    list-style-type: none;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-content {
+    list-style-type: none;
+    padding: 5px;
+    font-size: 15px;
 }
 
 .add-book-btn-container {
