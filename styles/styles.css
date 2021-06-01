@@ -1,0 +1,19 @@
+:root {
+    --main-color: #34455A;
+    --secondary-color: #007FBA;
+    --aesthetic-color: #E57A09;
+    --text-color: #F2F2F2;
+}
+
+body {
+    background-color: var(--main-color);
+    margin: 0;
+}
+
+.nav-container {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    /* border: 5px solid var(--aesthetic-color);
+    border-width: 0 0 3px 0; */
+    padding: 35px;
+}
