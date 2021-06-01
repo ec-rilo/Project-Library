@@ -10,15 +10,20 @@
     <title>project-library</title>
 </head>
 <body>
-    <div class="nav-container">My Library</div>
+    <div class="nav-container">
+        My Library
+    </div>
     <div class="filter-container">
         <label for="book-order">Order books by:</label>
         <select name="book-order">
             <option value="insertion-date">Insertion Date</option>
             <option value="publish-date">Publishing Date</option>
         </select>
-
-
+        <label for="asc-desc"></label>
+        <select name="asc-desc">
+            <option value="asc">Ascending order</option>
+            <option value="desc">Descending order</option>
+        </select>
     </div>
     <script src="scripts/main.js"></script>
 </body>
