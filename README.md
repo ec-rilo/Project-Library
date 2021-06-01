@@ -3,7 +3,7 @@
     My implementation of a library app.
     </br>
     </br>
-    <a href="#" target="_blank">View Live >></a>
+    <a href="https://ec-rilo.github.io/Project-Library/" target="_blank">View Live >></a>
 </p>
 
 ## References
