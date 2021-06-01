@@ -34,6 +34,16 @@ body {
 
 }
 
+.books-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    gap: 100px;
+}
+
 .card-container {
     position: relative;
     background-image: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));

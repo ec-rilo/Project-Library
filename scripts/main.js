@@ -9,9 +9,15 @@ function Book(title, author, numOfPages, bookLang, publishDate, readConfirm) {
     this.readConfirm = readConfirm;
 }
 
-let GoT = new Book('A Game Of Thrones', 'George R. R. Martin', '694', 'English', 'July 1, 1996', 'not read yet');
+let GoT = new Book('A Game Of Thrones', 'George R. R. Martin', '694', 'English', 'July 1, 1996', 'Not read yet');
 
-let bookArr = [GoT];
+let theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'English', 'Date #, ####', 'Not read yet');
+
+let aHabits = new Book('Atomic Habits', 'James Clear', '322', 'English', 'Date #, ####', 'Read');
+
+let congo = new Book('Congo', 'Micheal Crichton', '339', 'Date #, ####', 'Read')
+
+let bookArr = [GoT, theHobbit, aHabits, congo];
 function addBookToLibrary(bookArr, userBook) {
     bookArr.push(book);
 }
