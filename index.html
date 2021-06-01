@@ -6,11 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <title>project-library</title>
 </head>
 <body>
-    <div class="nav-container">Library</div>
+    <div class="nav-container">My Library</div>
+    <div class="filter-container">
+        <label for="book-order">Order books by:</label>
+        <select name="book-order">
+            <option value="insertion-date">Insertion Date</option>
+            <option value="publish-date">Publishing Date</option>
+        </select>
+
+
+    </div>
     <script src="scripts/main.js"></script>
 </body>
 </html>

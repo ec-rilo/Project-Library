@@ -1,8 +1,11 @@
 :root {
-    --main-color: #34455A;
-    --secondary-color: #007FBA;
-    --aesthetic-color: #E57A09;
+    --main-color: #46A4C7;
+    --secondary-color: #1E2B3C;
+    --tertiary-color: #34455A;
+    --button-color: #E57A09;
     --text-color: #F2F2F2;
+    --title-font: 'Roboto';
+    --text-font: 'Roboto';
 }
 
 body {
@@ -15,5 +18,15 @@ body {
     color: var(--text-color);
     /* border: 5px solid var(--aesthetic-color);
     border-width: 0 0 3px 0; */
-    padding: 35px;
+    padding: 15px 0 15px 35px;
+    font-family: var(--title-font);
+    font-size: 40px;
+}
+
+.filter-container {
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+    font-family: var(--text-font);
+    padding: 5px 0 5px 35px;
+
 }
