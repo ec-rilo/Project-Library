@@ -87,9 +87,28 @@ addBookBtn.addEventListener('mouseout', removeTransition);
 function openForm() {
     let form = document.querySelector('.form-popup');
     let elems = document.querySelectorAll(`body > *:not(.form-popup)`);
-
+    
     form.style.display = 'block';
     elems.forEach((elem) => {
         elem.style.filter = 'blur(3px)';
     });
+
+    let overlay = document.querySelector('.overlay');
+    overlay.classList.add('black-overlay');
+}
+
+let closeBtn = document.querySelector('.close-form-btn');
+    closeBtn.addEventListener('click', closeForm);
+
+function closeForm() {
+    let form = document.querySelector('.form-popup');
+    let elems = document.querySelectorAll(`body > *:not(.form-popup)`);
+
+    form.style.display = 'none';
+    elems.forEach((elem) => {
+        elem.style.filter = 'blur(0)';
+    });
+
+    let overlay = document.querySelector('.overlay');
+    overlay.classList.remove('black-overlay');
 }
