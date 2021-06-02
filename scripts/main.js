@@ -1,5 +1,6 @@
 'use strict';
 
+
 function Book(title, author, numOfPages, bookLang, publishDate, readConfirm) {
     this.title = title;
     this.author = author;
@@ -82,3 +83,13 @@ addBookBtn.addEventListener('mouseover', () => {
     addBookBtn.classList.add('add-book-btn-action');
 });
 addBookBtn.addEventListener('mouseout', removeTransition);
+
+function openForm() {
+    let form = document.querySelector('.form-popup');
+    let elems = document.querySelectorAll(`body > *:not(.form-popup)`);
+
+    form.style.display = 'block';
+    elems.forEach((elem) => {
+        elem.style.filter = 'blur(3px)';
+    });
+}
