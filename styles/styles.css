@@ -88,12 +88,12 @@ body {
 
 .add-book-btn-container {
     display: flex;
-    position: absolute;
+    position: relative;
     bottom: 20px;
-    right: 20px;
+    left: 95%;
     height: 50px;
     width: 50px;
-    background-color: var(--button-color);
+    background: linear-gradient(135deg, var(--button-color)  0%, #CE4257 100%);
     color: white;
     justify-content: center;
     align-items: center;

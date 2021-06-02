@@ -15,9 +15,13 @@ let theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'English', 'Date
 
 let aHabits = new Book('Atomic Habits', 'James Clear', '322', 'English', 'Date #, ####', 'Read');
 
-let congo = new Book('Congo', 'Micheal Crichton', '339', 'Date #, ####', 'Read')
+let congo = new Book('Congo', 'Micheal Crichton', '339','English', 'Date #, ####', 'Read')
 
-let bookArr = [GoT, theHobbit, aHabits, congo];
+let a = new Book();
+
+let b = new Book();
+
+let bookArr = [GoT, theHobbit, aHabits, congo, a, b];
 function addBookToLibrary(bookArr, userBook) {
     bookArr.push(book);
 }
@@ -25,6 +29,7 @@ function addBookToLibrary(bookArr, userBook) {
 
 const booksContainer = document.querySelector('.books-container');
 function displayBooks() {
+    const booksContainer = document.querySelector('.books-container');
     for (let i = 0; i < bookArr.length; ++i) {
         let bookCardContainer = document.createElement('div');
         bookCardContainer.classList.add(`book${i + 1}`);
