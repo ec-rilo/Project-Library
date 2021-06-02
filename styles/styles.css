@@ -9,6 +9,7 @@
     --card-color-1: #090909;
     --card-color-2: #34455A;
     --form-color: #ededed;
+    --form-btn-hover-color: rgba(0, 0, 0, .1); 
 }
 
 body {
@@ -130,6 +131,30 @@ body {
     border-radius: 5px;
 }
 
+.close-form-btn {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-family: var(--text-font);
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    z-index: 1;
+    
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.close-form-btn:hover {
+    background-color: var(--form-btn-hover-color);
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -195,9 +220,9 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: rgba(0, 0, 0, .1);
+    background-color: var(--form-btn-hover-color);
 }
 
 .clear-btn:hover {
-    background-color: rgba(0, 0, 0, .1);
+    background-color: var(--form-btn-hover-color);
 }
