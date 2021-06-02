@@ -26,6 +26,35 @@
         </select>
     </div>
     <div class="books-container"></div>
+    <div class="form-popup">
+        <form action="#" class="form-container">
+            <h1>Add New Book</h1>
+            <label for="book-title">Book title*<br></label>
+            <input type="text" id="book-title" name="book-title" placeholder="Enter Title" required>
+
+            <label for="book-author"><br>Book author*<br></label>
+            <input type="text" id="book-author" name="book-author" placeholder="Enter Author" required>
+
+            <label for="num-of-pages"><br>Number of pages*<br></label>
+            <input type="text" id="num-of-pages" name="book-num-of-pages" placeholder="Number of pages" required>
+
+            <label for="book-lang"><br>Language*<br></label>
+            <input type="text" id="book-lang" name="book-lang" placeholder="Language" required>
+
+            <label for="book-publish-date"><br>Publishing date*</br></label>
+            <input type="date" id="book-publish-date" name="book-publish-date" placeholder="mm/dd/yyyy" required>
+
+            <label for="read-status"><br>Book read status<br></label>
+            <input type="text" id="read-status" name="book-read-status" list="status-list" required>
+            <datalist id="status-list">
+                <option value="Read">
+                <option value="Not read yet">
+            </datalist>
+            <br>
+            <button type="submit">Add</button>
+            <button type="reset">Clear fields</button>
+        </form>
+    </div>
     <button type="button" class="add-book-btn-container">
         <div class="add-book-icon">+</div>
     </div>

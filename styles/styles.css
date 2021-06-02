@@ -115,3 +115,11 @@ body {
 .add-book-btn-action {
     transform: rotate(0.5turn) scale(1.2);;    
 }
+
+.form-popup {
+    background-color: white;
+    height: 500px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+}
