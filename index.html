@@ -27,32 +27,59 @@
     </div>
     <div class="books-container"></div>
     <div class="form-popup">
-        <form action="#" class="form-container">
-            <h1>Add New Book</h1>
-            <label for="book-title">Book title*<br></label>
-            <input type="text" id="book-title" name="book-title" placeholder="Enter Title" required>
+        <form action="#" class="form-container" autocomplete="off">
+            <h1 class="form-title">Add New Book</h1>
 
-            <label for="book-author"><br>Book author*<br></label>
-            <input type="text" id="book-author" name="book-author" placeholder="Enter Author" required>
+            <div class="form-item-container">
+                <label for="book-title">Book title*<br></label>
+                <div class="input-textbox-container">
+                    <input class="input-textbox" type="text" id="book-title" name="book-title" placeholder="Title" required>
+                </div>
+            </div>
+            
+            <div class="form-item-container">
+                <label for="book-author"><br>Book author*<br></label>
+                <div class="input-textbox-container">
+                    <input class="input-textbox" type="text" id="book-author" name="book-author" placeholder="Author" required>
+                </div>
+            </div>
 
-            <label for="num-of-pages"><br>Number of pages*<br></label>
-            <input type="text" id="num-of-pages" name="book-num-of-pages" placeholder="Number of pages" required>
+            <div class="form-item-container">
+                <label for="num-of-pages"><br>Number of pages*<br></label>
+                <div class="input-textbox-container">
+                    <input class="input-textbox" type="number" id="num-of-pages" name="book-num-of-pages" placeholder="Number of pages" min="1" required>
+                </div>
+            </div>
 
-            <label for="book-lang"><br>Language*<br></label>
-            <input type="text" id="book-lang" name="book-lang" placeholder="Language" required>
+            <div class="form-item-container">
+                <label for="book-lang"><br>Language*<br></label>
+                <div class="input-textbox-container">
+                    <input class="input-textbox" type="text" id="book-lang" name="book-lang" placeholder="Language" required>
+                </div>
+            </div>
 
-            <label for="book-publish-date"><br>Publishing date*</br></label>
-            <input type="date" id="book-publish-date" name="book-publish-date" placeholder="mm/dd/yyyy" required>
+            <div class="form-item-container">
+                <label for="book-publish-date"><br>Publishing date*</br></label>
+                <div class="input-textbox-container">
+                    <input class="input-textbox" type="date" id="book-publish-date" name="book-publish-date" placeholder="mm/dd/yyyy" required>
+                </div>
+            </div>
 
-            <label for="read-status"><br>Book read status<br></label>
-            <input type="text" id="read-status" name="book-read-status" list="status-list" required>
-            <datalist id="status-list">
-                <option value="Read">
-                <option value="Not read yet">
-            </datalist>
-            <br>
-            <button type="submit">Add</button>
-            <button type="reset">Clear fields</button>
+            <div class="form-item-container">
+                <label for="read-status"><br>Book read status<br></label>
+                <div class="input-textbox-container">
+                    <input class="input-textbox" type="text" id="read-status" name="book-read-status" list="status-list" required>
+                </div>
+                <datalist id="status-list">
+                    <option value="Read">
+                    <option value="Not read yet">
+                </datalist>
+            </div>
+            
+            <div class="form-btn-container">
+                <button class="submit-btn" type="submit">Add</button>
+                <button class="clear-btn" type="reset">Clear fields</button>
+            </div>
         </form>
     </div>
     <button type="button" class="add-book-btn-container">
