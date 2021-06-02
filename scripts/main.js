@@ -26,10 +26,8 @@ function addBookToLibrary(bookArr, userBook) {
     bookArr.push(book);
 }
 
-
 const booksContainer = document.querySelector('.books-container');
 function displayBooks() {
-    const booksContainer = document.querySelector('.books-container');
     for (let i = 0; i < bookArr.length; ++i) {
         let bookCardContainer = document.createElement('div');
         bookCardContainer.classList.add(`book${i + 1}`);
@@ -74,3 +72,13 @@ function displayBooks() {
 }
 
 displayBooks();
+
+function removeTransition() {
+    addBookBtn.classList.remove('add-book-btn-action');
+}
+
+let addBookBtn = document.querySelector('.add-book-btn-container');
+addBookBtn.addEventListener('mouseover', () => {
+    addBookBtn.classList.add('add-book-btn-action');
+});
+addBookBtn.addEventListener('mouseout', removeTransition);
