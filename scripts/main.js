@@ -12,17 +12,11 @@ function Book(title, author, numOfPages, bookLang, publishDate, readConfirm) {
 
 let GoT = new Book('A Game Of Thrones', 'George R. R. Martin', '694', 'English', 'July 1, 1996', 'Not read yet');
 
-let theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', 'English', 'Date #, ####', 'Not read yet');
-
 let aHabits = new Book('Atomic Habits', 'James Clear', '322', 'English', 'Date #, ####', 'Read');
 
 let congo = new Book('Congo', 'Micheal Crichton', '339','English', 'Date #, ####', 'Read')
 
-let a = new Book();
-
-let b = new Book();
-
-let bookArr = [GoT, theHobbit, aHabits, congo];
+let bookArr = [GoT, aHabits, congo];
 function addBookToLibrary(bookArr, userBook) {
     bookArr.push(book);
 }
@@ -31,13 +25,14 @@ const booksContainer = document.querySelector('.books-container');
 function displayBooks() {
     for (let i = 0; i < bookArr.length; ++i) {
         let bookCardContainer = document.createElement('div');
-        bookCardContainer.classList.add(`book${i + 1}`);
         bookCardContainer.classList.add('card-container');
+        bookCardContainer.dataset.bookNum = `${i}`;
 
         let rmCardBtn = document.createElement('button');
         rmCardBtn.classList.add('remove-card-btn');
         rmCardBtn.setAttribute('type', 'button');
         rmCardBtn.innerHTML = 'x';
+        rmCardBtn.dataset.bookObjIndex = `${i}`;
         bookCardContainer.appendChild(rmCardBtn);
 
         let cardTextContainer = document.createElement('ul');
@@ -74,6 +69,28 @@ function displayBooks() {
 }
 
 displayBooks();
+
+function removeCard() {
+    let rmCardBtnArr = Array.from(document.querySelectorAll('.remove-card-btn'));
+    rmCardBtnArr.forEach(button => {
+        button.addEventListener('click', () => {
+            let bookObjIndex = button.getAttribute('data-book-obj-index');
+            bookArr.splice(bookObjIndex, 1);
+
+            let cardArr = document.querySelectorAll('.card-container');
+            cardArr.forEach(card => card.remove());
+            displayBooks();
+            cardArr = document.querySelectorAll('.card-container');
+            console.log(cardArr);
+            rmCardBtnArr = Array.from(document.querySelectorAll('.remove-card-btn'));
+            console.log(rmCardBtnArr);
+            removeCard();
+        });
+        
+    });
+}
+
+removeCard();
 
 function removeTransition() {
     addBookBtn.classList.remove('add-book-btn-action');
