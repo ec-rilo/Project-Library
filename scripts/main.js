@@ -34,8 +34,9 @@ function displayBooks() {
         bookCardContainer.classList.add(`book${i + 1}`);
         bookCardContainer.classList.add('card-container');
 
-        let rmCardBtn = document.createElement('div');
+        let rmCardBtn = document.createElement('button');
         rmCardBtn.classList.add('remove-card-btn');
+        rmCardBtn.setAttribute('type', 'button');
         rmCardBtn.innerHTML = 'x';
         bookCardContainer.appendChild(rmCardBtn);
 

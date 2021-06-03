@@ -79,11 +79,23 @@ body {
 }
 
 .remove-card-btn {
+    z-index: 1;
     opacity: .8;
+    background: transparent;
+    color: white;
     font-family: var(--text-font);
+    font-size: 23px;
+    color: var(--text-color);
     position: absolute;
     right: 10px;
     top: 5px;
+    border: none;
+    transition: .5s;
+}
+
+.remove-card-btn:hover {
+    transform: scale(1.5);
+    cursor: pointer;
 }
 
 .add-book-btn-container {
@@ -117,7 +129,7 @@ body {
 }
 
 .form-popup {
-    z-index: 2;
+    z-index: 3;
     display: none;
     position: fixed;
     font-family: var(--text-font);
@@ -227,7 +239,7 @@ body {
 }
 
 .black-overlay {
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
