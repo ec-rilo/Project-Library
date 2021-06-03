@@ -100,7 +100,7 @@ body {
 
 .add-book-btn-container {
     display: flex;
-    position: relative;
+    position: fixed;
     border: none;
     bottom: 20px;
     left: 95%;

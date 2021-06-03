@@ -22,7 +22,7 @@ let a = new Book();
 
 let b = new Book();
 
-let bookArr = [GoT, theHobbit, aHabits, congo, a, b];
+let bookArr = [GoT, theHobbit, aHabits, congo];
 function addBookToLibrary(bookArr, userBook) {
     bookArr.push(book);
 }
