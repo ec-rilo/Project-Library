@@ -17,7 +17,7 @@ let aHabits = new Book('Atomic Habits', 'James Clear', '322', 'English', 'Date #
 let congo = new Book('Congo', 'Micheal Crichton', '339','English', 'Date #, ####', 'Read')
 
 let bookArr = [GoT, aHabits, congo];
-function addBookToLibrary(bookArr, userBook) {
+function addBookToLibrary(book) {
     bookArr.push(book);
 }
 
@@ -63,6 +63,18 @@ function displayBooks() {
         bookPublishDate.innerHTML = 'Published: ' + bookArr[i].publishDate;
         cardTextContainer.appendChild(bookPublishDate);
 
+        let toggleMaster = document.createElement('div');
+        toggleMaster.setAttribute('class', 'toggle-master');
+        let toggleLabel = document.createElement('label');
+        toggleLabel.setAttribute('for', 'toggle-container');
+        toggleLabel.innerHTML = 'Mark as read: ';
+        toggleMaster.appendChild(toggleLabel);
+        let toggleContainer = document.createElement('input');
+        toggleContainer.setAttribute('type', 'checkbox');
+        toggleContainer.setAttribute('id', 'toggle-container');
+        toggleMaster.appendChild(toggleContainer);
+        cardTextContainer.appendChild(toggleMaster);
+
         bookCardContainer.appendChild(cardTextContainer);
         booksContainer.appendChild(bookCardContainer);
     }
@@ -81,12 +93,9 @@ function removeCard() {
             cardArr.forEach(card => card.remove());
             displayBooks();
             cardArr = document.querySelectorAll('.card-container');
-            console.log(cardArr);
             rmCardBtnArr = Array.from(document.querySelectorAll('.remove-card-btn'));
-            console.log(rmCardBtnArr);
             removeCard();
         });
-        
     });
 }
 
@@ -116,7 +125,7 @@ function openForm() {
 }
 
 let closeBtn = document.querySelector('.close-form-btn');
-    closeBtn.addEventListener('click', closeForm);
+closeBtn.addEventListener('click', closeForm);
 
 function closeForm() {
     let form = document.querySelector('.form-popup');

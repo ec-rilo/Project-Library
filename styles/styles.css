@@ -246,3 +246,45 @@ body {
     height: 100%;
     bottom: 0;
 }
+
+.toggle-master {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-color);
+    font-family: var(--text-font);
+    justify-content: flex-end;
+    margin-right: 15px;
+}
+
+#toggle-container {
+    position: relative;
+    background-color: var(--card-color-1);
+    margin-left: 8px;
+    width: 45px;
+    height: 20px;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    appearance: none;
+    cursor: pointer;
+}
+
+#toggle-container:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-radius: 10px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--text-color);
+    transition: .1s;
+}
+
+#toggle-container:checked:before {
+    left: 26px;
+}
+
+#toggle-container:checked {
+    background-color: #098F09;
+}
