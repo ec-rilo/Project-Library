@@ -10,24 +10,24 @@ function Book(title, author, numOfPages, bookLang, publishDate, readConfirm) {
     this.readConfirm = readConfirm;
 }
 
-let GoT = new Book('A Game Of Thrones', 'George R. R. Martin', '694', 'English', 'July 1, 1996', 'Not read yet');
+let book1 = new Book('A Game Of Thrones', 'George R. R. Martin', '694', 'English', 'July 1, 1996', 'Not read yet');
 
-let aHabits = new Book('Atomic Habits', 'James Clear', '322', 'English', 'Date #, ####', 'Read');
+let book2 = new Book('Atomic Habits', 'James Clear', '322', 'English', 'Date #, ####', 'Read');
 
-let congo = new Book('Congo', 'Micheal Crichton', '339','English', 'Date #, ####', 'Read')
+let book3 = new Book('Congo', 'Micheal Crichton', '339','English', 'Date #, ####', 'Read')
 
-let bookArr = [GoT, aHabits, congo];
+let bookArr = [book1, book2, book3];
 
 const booksContainer = document.querySelector('.books-container');
 function displayBooks() {
     for (let i = 0; i < bookArr.length; ++i) {
-        createBook(i);
+        createBookCard(i);
     }
 }
 
 displayBooks();
 
-function createBook(i) {
+function createBookCard(i) {
     let bookCardContainer = document.createElement('div');
     bookCardContainer.classList.add('card-container');
     bookCardContainer.dataset.bookNum = `${i}`;
@@ -83,7 +83,7 @@ function createBook(i) {
     booksContainer.appendChild(bookCardContainer);
 }
 
-function removeCard() {
+function removeSingleCard() {
     let rmCardBtnArr = Array.from(document.querySelectorAll('.remove-card-btn'));
     rmCardBtnArr.forEach(button => {
         button.addEventListener('click', () => {
@@ -95,12 +95,12 @@ function removeCard() {
             displayBooks();
             cardArr = document.querySelectorAll('.card-container');
             rmCardBtnArr = Array.from(document.querySelectorAll('.remove-card-btn'));
-            removeCard();
+            removeSingleCard();
         });
     });
 }
 
-removeCard();
+removeSingleCard();
 
 function removeTransition() {
     addBookBtn.classList.remove('add-book-btn-action');
@@ -146,3 +146,27 @@ function closeForm() {
 function addBookToLibrary(book) {
     bookArr.push(book);
 }
+
+// Adds a new book on form submission.
+let formContainer = document.querySelector('.form-container');
+formContainer.addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    let title = document.getElementById('book-title').value;
+    let author = document.getElementById('book-author').value;
+    let numOfPages = document.getElementById('num-of-pages').value;
+    let bookLang = document.getElementById('book-lang').value;
+    let bookPubDate = document.getElementById('book-publish-date').value;
+    let readConfirm = document.getElementById('read-status').value;
+    let readValue = readConfirm === 'Read' ? true : false;
+
+    let book = new Book(title, author, numOfPages, bookLang, bookPubDate, readConfirm);
+    bookArr.push(book);
+
+    let cardArr = document.querySelectorAll('.card-container');
+    cardArr.forEach(card => card.remove());
+    displayBooks();
+    
+    removeSingleCard();
+    closeForm();
+});
