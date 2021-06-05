@@ -21,13 +21,13 @@ let bookArr = [GoT, aHabits, congo];
 const booksContainer = document.querySelector('.books-container');
 function displayBooks() {
     for (let i = 0; i < bookArr.length; ++i) {
-        createBook();
+        createBook(i);
     }
 }
 
 displayBooks();
 
-function createBook() {
+function createBook(i) {
     let bookCardContainer = document.createElement('div');
     bookCardContainer.classList.add('card-container');
     bookCardContainer.dataset.bookNum = `${i}`;
@@ -129,8 +129,10 @@ let closeBtn = document.querySelector('.close-form-btn');
 closeBtn.addEventListener('click', closeForm);
 
 function closeForm() {
+    let formUI = document.querySelector('.form-container');
     let form = document.querySelector('.form-popup');
     let elems = document.querySelectorAll(`body > *:not(.form-popup)`);
+    formUI.reset();
 
     form.style.display = 'none';
     elems.forEach((elem) => {
