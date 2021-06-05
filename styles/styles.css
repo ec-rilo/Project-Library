@@ -257,7 +257,7 @@ body {
     margin-right: 15px;
 }
 
-#toggle-container {
+.toggle-container {
     position: relative;
     background-color: var(--card-color-1);
     margin-left: 8px;
@@ -269,7 +269,7 @@ body {
     cursor: pointer;
 }
 
-#toggle-container:before {
+.toggle-container:before {
     content: '';
     position: absolute;
     top: 1px;
@@ -281,10 +281,10 @@ body {
     transition: .1s;
 }
 
-#toggle-container:checked:before {
+.toggle-container:checked:before {
     left: 26px;
 }
 
-#toggle-container:checked {
+.toggle-container:checked {
     background-color: #098F09;
 }

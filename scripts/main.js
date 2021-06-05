@@ -22,6 +22,12 @@ const booksContainer = document.querySelector('.books-container');
 function displayBooks() {
     for (let i = 0; i < bookArr.length; ++i) {
         createBookCard(i);
+        let readConfirm = bookArr[i].readConfirm;
+        let toggle = document.getElementById(`toggle-container-${i + 1}`);
+        console.log(readConfirm);
+        if (readConfirm === 'Read'){
+            toggle.checked = true;
+        }
     }
 }
 
@@ -70,12 +76,13 @@ function createBookCard(i) {
     let toggleMaster = document.createElement('div');
     toggleMaster.setAttribute('class', 'toggle-master');
     let toggleLabel = document.createElement('label');
-    toggleLabel.setAttribute('for', 'toggle-container');
+    toggleLabel.setAttribute('for', `toggle-container-${i + 1}`);
     toggleLabel.innerHTML = 'Mark as read: ';
     toggleMaster.appendChild(toggleLabel);
     let toggleContainer = document.createElement('input');
     toggleContainer.setAttribute('type', 'checkbox');
-    toggleContainer.setAttribute('id', 'toggle-container');
+    toggleContainer.setAttribute('id', `toggle-container-${i + 1}`);
+    toggleContainer.setAttribute('class', 'toggle-container');
     toggleMaster.appendChild(toggleContainer);
     cardTextContainer.appendChild(toggleMaster);
         
